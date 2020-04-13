@@ -1,0 +1,23 @@
+{
+  "name": "d3-practice-budget-planner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wooleah/d3-budget-planner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wooleah/d3-budget-planner/issues"
+  },
+  "homepage": "https://github.com/wooleah/d3-budget-planner#readme",
+  "dependencies": {
+    "d3": "^5.15.1"
+  }
+}

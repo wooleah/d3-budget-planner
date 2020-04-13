@@ -7,9 +7,86 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBRZP_ZhZNQ57nPodWXFRv6wGiqlR_AoUI",
+        authDomain: "d3-practice-budget-planner.firebaseapp.com",
+        databaseURL: "https://d3-practice-budget-planner.firebaseio.com",
+        projectId: "d3-practice-budget-planner",
+        storageBucket: "d3-practice-budget-planner.appspot.com",
+        messagingSenderId: "926212325529",
+        appId: "1:926212325529:web:3f914a9beb9fd26b0ab808",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+
+    <script src="index.js" defer></script>
+    <script src="graph.js" defer></script>
+
+    <style>
+      h2,
+      p {
+        margin: 10px 0;
+      }
+      header {
+        margin-bottom: 40px;
+      }
+      .tip {
+        padding: 10px;
+        background: #333;
+        color: #fff;
+      }
+      .tip .delete {
+        color: hotpink;
+        font-size: 0.8em;
+      }
+    </style>
   </head>
-  <body class="indigo"></body>
+  <body class="indigo">
+    <header class="indigo darken-1 section">
+      <h2 class="center white-text">Practice planner</h2>
+      <p class="flow-text grey-text center text-lighten-2">Monthly money tracker :)</p>
+    </header>
+
+    <div class="container section">
+      <div class="row">
+        <div class="col s12 m6">
+          <form class="card z-depth-0">
+            <div class="card-content">
+              <span class="card-title indigo-text">Add Item:</span>
+              <div class="input-field">
+                <input type="text" id="name" />
+                <label for="name">Item Name</label>
+              </div>
+              <div class="input-field">
+                <input type="text" id="cost" />
+                <label for="cost">Item Cost</label>
+              </div>
+              <div class="input-field center">
+                <button class="btn-large pink white-text">Add Item</button>
+              </div>
+              <div class="input-field center">
+                <p class="red-text" id="error"></p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col s12 m5 push-m1">
+          <div class="canvas"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
